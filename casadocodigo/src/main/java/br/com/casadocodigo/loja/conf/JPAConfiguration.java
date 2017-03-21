@@ -9,11 +9,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 public class JPAConfiguration {
 	
-	public static void main(String[] args) {
-		entityManagerFactoryBean();
-	}
-
-	public static LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
+	public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
 
 		LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
 
