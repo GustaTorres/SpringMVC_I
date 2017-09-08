@@ -2,7 +2,9 @@ package br.com.casadocodigo.loja.controller;
 
 import java.util.List;
 
+
 import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,12 +27,12 @@ public class ProdutosController {
 	
 	@Autowired
 	private ProdutoDAO dao;
-	
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
 		binder.addValidators(new ProductValidation());
 	}
-	
+
 	@RequestMapping("form")
 	public ModelAndView form(){		
 		ModelAndView modelAndView = new ModelAndView("produtos/form");
@@ -39,12 +41,13 @@ public class ProdutosController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)
+
 	public ModelAndView gravar(@Valid Produto produto,BindingResult result, RedirectAttributes attributes){
 		
 		if(result.hasErrors()){
 			return form();
-		}
-		
+		}		
+
 		dao.gravar(produto);
 		System.out.println(produto);
 		
