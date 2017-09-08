@@ -9,11 +9,9 @@
 <title>Cadastro de livros</title>
 </head>
 <body>
-<<<<<<< HEAD
 	<div>${sucesso}</div>
 	
-=======
->>>>>>> branch 'master' of https://github.com/GustaTorres/SpringMVC_I.git
+
 	<h1>Lista de produtos</h1>
 
 	<table>
