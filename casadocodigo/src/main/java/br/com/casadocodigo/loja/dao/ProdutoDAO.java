@@ -29,4 +29,12 @@ public class ProdutoDAO {
 		return query.getResultList();
 	}
 
+
+	public Produto find(Integer id) {
+		TypedQuery<Produto> query = manager.createQuery("SELECT p FROM Produto p JOIN FETCH p.precos WHERE p.id = :pId",Produto.class);
+		query.setParameter("pId", id);
+		
+		return query.getSingleResult();
+	}
+
 }
