@@ -10,7 +10,7 @@
 <title>Cadastro de livros</title>
 </head>
 <body>
-	<div>${sucesso}</div>
+	<div>${message}</div>
 	
 
 	<h1>Lista de produtos</h1>
