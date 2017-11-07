@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,13 +28,23 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="${s:mvcUrl('HC#index').build()}">Casa do Código</a>
+			<a class="navbar-brand" href="${s:mvcUrl('HC#index').build()}">Casa
+				do Código</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="${s:mvcUrl('PC#listProducts').build()}">Lista de Produtos</a></li>
-				<li><a href="${s:mvcUrl('PC#form').build()}">Cadastro de Produtos</a></li>
+				<li><a href="${s:mvcUrl('PC#listProducts').build()}">Lista
+						de Produtos</a></li>
+				<li><a href="${s:mvcUrl('PC#form').build()}">Cadastro de
+						Produtos</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"> <security:authentication
+							property="principal" var="usuario" /> Usuário:
+						${usuario.username}
+				</a></li>
 			</ul>
 		</div>
 	</div>
