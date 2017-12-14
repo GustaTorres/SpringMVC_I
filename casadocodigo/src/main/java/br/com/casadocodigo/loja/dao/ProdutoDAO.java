@@ -1,5 +1,6 @@
 package br.com.casadocodigo.loja.dao;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -10,6 +11,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 import br.com.casadocodigo.loja.model.Produto;
+import br.com.casadocodigo.loja.model.TipoPreco;
 
 @Repository
 @Transactional
@@ -37,4 +39,11 @@ public class ProdutoDAO {
 		return query.getSingleResult();
 	}
 
+
+	public BigDecimal somaPrecosPorTipo(TipoPreco tipo) {
+		TypedQuery<BigDecimal> query = manager.createQuery("SELECT SUM(preco.valor) FROM Produto p JOIN p.precos preco WHERE preco.tipo = :pTipo", BigDecimal.class);
+		query.setParameter("pTipo", tipo);
+		
+		return query.getSingleResult();
+	}
 }

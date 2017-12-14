@@ -1,6 +1,7 @@
 package br.com.casadocodigo.loja.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class Produto {
 	private Calendar dataLancamento;
 	
 	@ElementCollection
-	private List<Preco> precos;
+	private List<Preco> precos = new ArrayList<>();
 
 	public Integer getId() {
 		return id;
